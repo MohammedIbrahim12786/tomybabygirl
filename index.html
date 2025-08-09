@@ -9,16 +9,23 @@
       font-family: 'Segoe UI', sans-serif;
       text-align: center;
       padding: 50px;
+      position: relative;
+      overflow-x: hidden; /* Prevent horizontal scroll */
+      background-color: #ffe6f0;
       animation: backgroundShift 15s ease infinite;
     }
     h1 {
       font-size: 2em;
+      position: relative;
+      z-index: 10;
     }
     #message {
       font-size: 1.5em;
       margin: 30px 0;
       color: #d63384;
       animation: heartbeat 3s ease-in-out infinite;
+      position: relative;
+      z-index: 10;
     }
     button {
       background-color: #ff80b3;
@@ -28,6 +35,8 @@
       font-size: 1.2em;
       border-radius: 10px;
       cursor: pointer;
+      position: relative;
+      z-index: 10;
     }
     button:hover {
       background-color: #ff4d94;
@@ -78,12 +87,48 @@
         background-color: #ffe6f0;
       }
     }
+
+    /* Floating hearts container */
+    #hearts-container {
+      pointer-events: none; /* So clicks pass through hearts */
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .heart {
+      position: absolute;
+      font-size: 20px;
+      opacity: 0.8;
+      animation: floatUp linear forwards;
+      user-select: none;
+      will-change: transform, opacity;
+      color: #d63384;
+      text-shadow: 0 0 5px #ff6699;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-120vh) scale(1.5);
+        opacity: 0;
+      }
+    }
   </style>
 </head>
 <body>
   <h1>i love you, never forget that- your man</h1>
   <div id="message"></div>
   <button onclick="showRandomMessage()">head high babygirl ❤️</button>
+
+  <div id="hearts-container"></div>
 
   <script>
     const messages = [
@@ -144,6 +189,35 @@
 
     // Show one message when the page loads
     showRandomMessage();
+
+    // Floating hearts animation
+    const heartsContainer = document.getElementById('hearts-container');
+
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.textContent = '❤️';
+
+      // Random horizontal start position within viewport width
+      heart.style.left = Math.random() * 100 + 'vw';
+
+      // Random animation duration between 5 and 12 seconds
+      const duration = 5 + Math.random() * 7;
+      heart.style.animationDuration = duration + 's';
+
+      // Random font size between 15px and 30px
+      heart.style.fontSize = (15 + Math.random() * 15) + 'px';
+
+      heartsContainer.appendChild(heart);
+
+      // Remove heart after animation ends to keep DOM clean
+      heart.addEventListener('animationend', () => {
+        heart.remove();
+      });
+    }
+
+    // Create a new heart every 400ms
+    setInterval(createHeart, 400);
   </script>
 </body>
 </html>

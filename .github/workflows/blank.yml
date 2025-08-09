@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>for my baby ❤️ for whenever you're sad </title>
+  <style>
+    body {
+      background-color: #ffe6f0;
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      padding: 50px;
+    }
+    #message {
+      font-size: 1.5em;
+      margin: 30px 0;
+      color: #d63384;
+    }
+    button {
+      background-color: #ff80b3;
+      border: none;
+      padding: 10px 20px;
+      color: white;
+      font-size: 1.2em;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #ff4d94;
+    }
+  </style>
+</head>
+<body>
+  <h1>i love you, never forget that- your man</h1>
+  <div id="message"></div>
+  <button onclick="showRandomMessage()">Show Another</button>
+
+  <script>
+    const messages = [
+      "i love you",
+      "you're so beautiful",
+      "i'm obsessed with everything about you",
+      "you'll always be my babygirl",
+      "id choose you every day of the week",
+      "have you hit your 2L of water yet?",
+      "i love the way you smile",
+      "head up pretty girl, everythings going to be okay",
+      "always keep going no matter what",
+      "even if the whole world was against you, i'll be by your side always",
+      "i love you so so much",
+      "breathe for me",
+      "you're going to be okay ❤️",
+      "mwaaaaaaaaaaaaaaaaaaaaaaah",
+      "you deserve to be happy", 
+      "you deserve to be loved",
+      "you can get through any situation, i believe in you",
+      "i loved you, i love you, and i will love you forever",
+      "you're my soulmate",
+      "we'll always find each other ❤️",
+      "wipe your pretty eyes for me",
+      "i'll hold you so close to me, everythings okay",
+      "head high babygirl"
+      "drink some water!",
+      "go and eat some food :)",
+      "breathe, you're okay :)",
+      "you're my babygirl",
+      "you're my princess",
+      "you're my pretty girl",
+      "you're the love of my life",
+      "i adore you",
+      "i care about you",
+      "wherever i am right now, i'm thinking about you",
+      "i think about you all the time"
+      "our souls will always find each other",
+      "i'll keep you safe in my arms",
+      "be kind to yourself, you deserve that",
+      "be gentle with yourself",
+      "take your meds and vitamins",
+      "you make my day everyday",
+      "i love loving you",
+      "i love your love",
+      "you'll always be mine",
+      "i'll always be yours",
+      "sweetdreams my love",
+      "good morning my love",
+      "have a good rest of your day my princess",
+      "you're never alone, i'll always be there"
+
+    ];
+
+    function showRandomMessage() {
+      const randomIndex = Math.floor(Math.random() * messages.length);
+      document.getElementById("message").textContent = messages[randomIndex];
+    }
+
+    // Show one message when the page loads
+    showRandomMessage();
+  </script>
+</body>
+</html>

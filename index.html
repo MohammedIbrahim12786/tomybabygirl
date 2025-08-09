@@ -6,10 +6,10 @@
   <title>for my baby ❤️ for whenever you're sad </title>
   <style>
     body {
-      background-color: #ffe6f0;
       font-family: 'Segoe UI', sans-serif;
       text-align: center;
       padding: 50px;
+      animation: backgroundShift 15s ease infinite;
     }
     h1 {
       font-size: 2em;
@@ -36,17 +36,16 @@
     /* Responsive styles for mobile */
     @media (max-width: 600px) {
       body {
-        background-color: #ffcccc; /* temporary, should change on mobile */
         padding: 30px;
       }
       h1 {
-        font-size: 2.5em; /* bigger heading */
+        font-size: 2.5em;
       }
       #message {
-        font-size: 2em; /* bigger message text */
+        font-size: 2em;
       }
       button {
-        font-size: 1.5em; /* bigger button text */
+        font-size: 1.5em;
         padding: 15px 30px;
       }
     }
@@ -58,6 +57,25 @@
       }
       50% {
         transform: scale(1.05);
+      }
+    }
+
+    /* Background color animation */
+    @keyframes backgroundShift {
+      0% {
+        background-color: #ffe6f0;
+      }
+      25% {
+        background-color: #ffccdd;
+      }
+      50% {
+        background-color: #ffb3cc;
+      }
+      75% {
+        background-color: #ff99bb;
+      }
+      100% {
+        background-color: #ffe6f0;
       }
     }
   </style>

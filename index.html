@@ -16,18 +16,17 @@
       margin: 0;
       height: 100vh;
       color: white;
-      /* No text-stroke on body */
     }
     h1 {
       font-size: 2em;
       position: relative;
       z-index: 10;
-      -webkit-text-stroke: 1px #000000; /* black stroke */
+      /* Removed all text-stroke */
       text-shadow:
         -1px -1px 0 #000,
         1px -1px 0 #000,
         -1px 1px 0 #000,
-        1px 1px 0 #000; /* black shadow outline */
+        1px 1px 0 #000;
     }
     #message {
       font-size: 1.5em;
@@ -35,7 +34,7 @@
       animation: heartbeat 3s ease-in-out infinite;
       position: relative;
       z-index: 10;
-      -webkit-text-stroke: 1px #000000;
+      /* Removed all text-stroke */
       text-shadow:
         -1px -1px 0 #000,
         1px -1px 0 #000,
@@ -52,7 +51,7 @@
       cursor: pointer;
       position: relative;
       z-index: 10;
-      -webkit-text-stroke: 1px #000000;
+      /* Removed all text-stroke */
       text-shadow:
         -1px -1px 0 #000,
         1px -1px 0 #000,
@@ -122,13 +121,19 @@
       }
       h1 {
         font-size: 2.5em;
+        text-shadow: none !important;
       }
       #message {
         font-size: 2em;
+        text-shadow: none !important;
       }
       button {
         font-size: 1.5em;
         padding: 15px 30px;
+        text-shadow: none !important;
+      }
+      .heart {
+        text-shadow: none !important;
       }
     }
   </style>

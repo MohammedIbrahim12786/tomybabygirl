@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>for my baby ❤️ for whenever you're sad </title>
+  <title>Moving Hearts Background</title>
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
       text-align: center;
       padding: 50px;
       position: relative;
-      overflow-x: hidden; /* Prevent horizontal scroll */
+      overflow-x: hidden;
       background-color: #ffe6f0;
-      animation: backgroundShift 15s ease infinite;
+      z-index: 0;
     }
     h1 {
       font-size: 2em;
@@ -42,73 +42,30 @@
       background-color: #ff4d94;
     }
 
-    /* Responsive styles for mobile */
-    @media (max-width: 600px) {
-      body {
-        padding: 30px;
-      }
-      h1 {
-        font-size: 2.5em;
-      }
-      #message {
-        font-size: 2em;
-      }
-      button {
-        font-size: 1.5em;
-        padding: 15px 30px;
-      }
-    }
-
-    /* Heartbeat animation */
     @keyframes heartbeat {
-      0%, 100% {
-        transform: scale(1);
-      }
-      50% {
-        transform: scale(1.05);
-      }
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
     }
 
-    /* Background color animation */
-    @keyframes backgroundShift {
-      0% {
-        background-color: #ffe6f0;
-      }
-      25% {
-        background-color: #ffccdd;
-      }
-      50% {
-        background-color: #ffb3cc;
-      }
-      75% {
-        background-color: #ff99bb;
-      }
-      100% {
-        background-color: #ffe6f0;
-      }
-    }
-
-    /* Floating hearts container */
     #hearts-container {
-      pointer-events: none; /* So clicks pass through hearts */
       position: fixed;
       top: 0;
       left: 0;
       width: 100vw;
       height: 100vh;
+      pointer-events: none;
       overflow: hidden;
       z-index: 1;
     }
 
     .heart {
       position: absolute;
-      font-size: 20px;
-      opacity: 0.8;
-      animation: floatUp linear forwards;
-      user-select: none;
-      will-change: transform, opacity;
+      font-size: 24px;
       color: #d63384;
-      text-shadow: 0 0 5px #ff6699;
+      user-select: none;
+      animation-name: floatUp;
+      animation-timing-function: linear;
+      animation-fill-mode: forwards;
     }
 
     @keyframes floatUp {
@@ -117,7 +74,7 @@
         opacity: 1;
       }
       100% {
-        transform: translateY(-120vh) scale(1.5);
+        transform: translateY(-110vh) scale(1.5);
         opacity: 0;
       }
     }
@@ -187,10 +144,8 @@
       document.getElementById("message").textContent = messages[randomIndex];
     }
 
-    // Show one message when the page loads
     showRandomMessage();
 
-    // Floating hearts animation
     const heartsContainer = document.getElementById('hearts-container');
 
     function createHeart() {
@@ -198,26 +153,26 @@
       heart.classList.add('heart');
       heart.textContent = '❤️';
 
-      // Random horizontal start position within viewport width
+      // Random horizontal position between 0 and 100vw
       heart.style.left = Math.random() * 100 + 'vw';
 
-      // Random animation duration between 5 and 12 seconds
-      const duration = 5 + Math.random() * 7;
+      // Random animation duration between 6 and 12 seconds
+      const duration = 6 + Math.random() * 6;
       heart.style.animationDuration = duration + 's';
 
-      // Random font size between 15px and 30px
-      heart.style.fontSize = (15 + Math.random() * 15) + 'px';
+      // Random font size between 20 and 30 px
+      heart.style.fontSize = (20 + Math.random() * 10) + 'px';
 
       heartsContainer.appendChild(heart);
 
-      // Remove heart after animation ends to keep DOM clean
+      // Remove the heart element after animation finishes
       heart.addEventListener('animationend', () => {
         heart.remove();
       });
     }
 
-    // Create a new heart every 400ms
-    setInterval(createHeart, 400);
+    // Spawn a heart every 300ms
+    setInterval(createHeart, 300);
   </script>
 </body>
 </html>

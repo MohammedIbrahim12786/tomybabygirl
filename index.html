@@ -156,6 +156,9 @@
       // Random horizontal position between 0 and 100vw
       heart.style.left = Math.random() * 100 + 'vw';
 
+      // Start just below the bottom of viewport (100vh to 110vh)
+      heart.style.top = (100 + Math.random() * 10) + 'vh';
+
       // Random animation duration between 6 and 12 seconds
       const duration = 6 + Math.random() * 6;
       heart.style.animationDuration = duration + 's';
@@ -165,7 +168,6 @@
 
       heartsContainer.appendChild(heart);
 
-      // Remove the heart element after animation finishes
       heart.addEventListener('animationend', () => {
         heart.remove();
       });

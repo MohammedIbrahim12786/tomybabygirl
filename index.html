@@ -11,18 +11,20 @@
       padding: 50px;
       position: relative;
       overflow-x: hidden;
-      background-color: rgba(0, 0, 0, 0.1);
+      background-color: #0b121b; /* dark midnight */
       animation: bgFade 6s ease-in-out infinite;
       margin: 0;
       height: 100vh;
       color: white;
-      -webkit-text-stroke: 1px #00ff00; /* green outline */
-      text-stroke: 1px #00ff00; /* fallback */
+      -webkit-text-stroke: 1px #000000; /* black outline */
+      text-stroke: 1px #000000;
     }
     h1 {
       font-size: 2em;
       position: relative;
       z-index: 10;
+      -webkit-text-stroke: 1px #000000;
+      text-stroke: 1px #000000;
     }
     #message {
       font-size: 1.5em;
@@ -30,9 +32,11 @@
       animation: heartbeat 3s ease-in-out infinite;
       position: relative;
       z-index: 10;
+      -webkit-text-stroke: 1px #000000;
+      text-stroke: 1px #000000;
     }
     button {
-      background-color: #228822; /* dark green */
+      background-color: #0a0a0a; /* darker black */
       border: none;
       padding: 10px 20px;
       color: white;
@@ -41,6 +45,8 @@
       cursor: pointer;
       position: relative;
       z-index: 10;
+      -webkit-text-stroke: 1px #000000;
+      text-stroke: 1px #000000;
       text-shadow:
         -1px -1px 0 #000,
         1px -1px 0 #000,
@@ -48,7 +54,7 @@
         1px 1px 0 #000;
     }
     button:hover {
-      background-color: #33cc33;
+      background-color: #222222;
     }
 
     @keyframes heartbeat {
@@ -57,8 +63,12 @@
     }
 
     @keyframes bgFade {
-      0%, 100% { background-color: rgba(0, 0, 0, 0.1); }
-      50% { background-color: rgba(0, 0, 0, 0.3); }
+      0%, 100% {
+        background-color: #0b121b;
+      }
+      50% {
+        background-color: #1a2433;
+      }
     }
 
     #hearts-container {

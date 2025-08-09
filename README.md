@@ -58,7 +58,7 @@
       "we'll always find each other ❤️",
       "wipe your pretty eyes for me",
       "i'll hold you so close to me, everythings okay",
-      "head high babygirl"
+      "head high babygirl",
       "drink some water!",
       "go and eat some food :)",
       "breathe, you're okay :)",
